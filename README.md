@@ -8,9 +8,11 @@
 
 ## 发布到 GitHub Pages
 
-1. 打开仓库 **Settings → Pages**，将 **Source** 设为 **GitHub Actions**。
-2. 将更新提交到 `main` 分支后，GitHub Actions 会自动发布网站。
-3. 发布完成后，可通过 `https://pipxiu.github.io/weibird-fan-archive/` 访问。
+仓库已设置为从 `main` 分支的根目录发布。提交到 `main` 后，GitHub Pages 会自动更新。
+
+网站地址：[https://pipxiu.github.io/weibird-fan-archive/](https://pipxiu.github.io/weibird-fan-archive/)
+
+如需检查设置，打开仓库 **Settings → Pages**，确认来源为 **Deploy from a branch**，分支为 `main`，目录为 `/(root)`。
 
 ## 更新内容时常改的位置
 
