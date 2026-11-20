@@ -84,3 +84,20 @@ siteNav.querySelectorAll("a").forEach((link) => {
 
 document.querySelector("#year").textContent = new Date().getFullYear();
 updateSongCount();
+
+const revealTargets = document.querySelectorAll(".tagline-section, main > .section-pad, main > .shows, main > .closing");
+if ("IntersectionObserver" in window) {
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("is-visible");
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.12 });
+  revealTargets.forEach((target) => {
+    if (!target.classList.contains("tagline-section")) target.classList.add("reveal-on-scroll");
+    revealObserver.observe(target);
+  });
+} else {
+  revealTargets.forEach((target) => target.classList.add("is-visible"));
+}

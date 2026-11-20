@@ -1,6 +1,6 @@
-# 慢慢听，慢慢记
+# Wei-Planet | 韦宇宙
 
-一份关于韦礼安的个人歌迷档案，使用 HTML、CSS 和少量 JavaScript 制作，可以直接发布到 GitHub Pages。
+一个关于韦礼安的个人歌迷档案，收藏歌曲、音乐故事、演出记忆与歌迷手账。使用 HTML、CSS 和少量 JavaScript 制作，可直接发布到 GitHub Pages。
 
 ## 本地预览
 
@@ -8,13 +8,9 @@
 
 ## 发布到 GitHub Pages
 
-1. 登录 GitHub，点击右上角的 **+**，选择 **New repository**。
-2. 仓库名可以用 `weibird-fan-archive`。若希望任何人通过链接浏览，请将仓库设为 **Public**。
-3. 建立仓库后，选择 **Add file → Upload files**，把 `index.html`、`styles.css`、`script.js` 和 `README.md` 上传到仓库根目录。确认 `index.html` 不在额外的子文件夹中，然后提交文件。
-4. 打开仓库的 **Settings → Pages**。
-5. 在 **Build and deployment** 区域，将 **Source** 设为 **Deploy from a branch**，分支选择 `main`，目录选择 `/(root)`，点击 **Save**。
-6. 等待 GitHub Pages 完成发布。页面上会显示网址，通常是 `https://你的GitHub用户名.github.io/weibird-fan-archive/`。
-7. 以后更新内容时，修改对应文件后再上传并提交，GitHub Pages 会重新发布。
+1. 打开仓库 **Settings → Pages**，将 **Source** 设为 **GitHub Actions**。
+2. 将更新提交到 `main` 分支后，GitHub Actions 会自动发布网站。
+3. 发布完成后，可通过 `https://pipxiu.github.io/weibird-fan-archive/` 访问。
 
 ## 更新内容时常改的位置
 
