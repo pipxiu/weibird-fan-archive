@@ -3,6 +3,7 @@ const songCards = document.querySelectorAll(".song-card");
 const songCount = document.querySelector("#song-count");
 const favoriteButtons = document.querySelectorAll(".favorite-button");
 const menuToggle = document.querySelector(".menu-toggle");
+const menuLabel = menuToggle.querySelector(".menu-label");
 const siteNav = document.querySelector(".site-nav");
 const storageKey = "weibird-fan-archive-favorites";
 
@@ -67,21 +68,22 @@ favoriteButtons.forEach((button) => {
   });
 });
 
+function setMenuOpen(isOpen) {
+  menuToggle.setAttribute("aria-expanded", String(isOpen));
+  menuToggle.setAttribute("aria-label", isOpen ? "关闭导航" : "打开导航");
+  menuLabel.textContent = isOpen ? "关闭" : "菜单";
+  siteNav.classList.toggle("is-open", isOpen);
+}
+
 menuToggle.addEventListener("click", () => {
-  const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
-  menuToggle.setAttribute("aria-expanded", String(!isOpen));
-  menuToggle.textContent = isOpen ? "菜单" : "关闭";
-  siteNav.classList.toggle("is-open", !isOpen);
+  setMenuOpen(menuToggle.getAttribute("aria-expanded") !== "true");
 });
 
 siteNav.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", () => {
-    menuToggle.setAttribute("aria-expanded", "false");
-    menuToggle.textContent = "菜单";
-    siteNav.classList.remove("is-open");
-  });
+  link.addEventListener("click", () => setMenuOpen(false));
 });
 
+document.documentElement.classList.add("motion-ready");
 document.querySelector("#year").textContent = new Date().getFullYear();
 updateSongCount();
 
